@@ -1,6 +1,6 @@
 {
     "name": "mrbohem/screen-wire",
-    "description": "Laravel Livewire package for clone screen with the help of websocket.",
+    "description": "Laravel Livewire package for clone screen with the help of websocket",
     "keywords": [
         "mrbohem",
         "laravel",
