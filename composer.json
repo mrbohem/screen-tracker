@@ -1,6 +1,6 @@
 {
     "name": "mrbohem/screen-wire",
-    "description": "https://github.com/mrbohem/screen-wire.git",
+    "description": "Laravel Livewire package for clone screen with the help of websocket.",
     "keywords": [
         "mrbohem",
         "laravel",
