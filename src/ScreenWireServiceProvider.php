@@ -23,6 +23,8 @@ class ScreenWireServiceProvider extends PackageServiceProvider
             true => \Mrbohem\ScreenWire\Service\AuthService::class,
         ][config('screen-wire.auth')];
 
-        (new MainService(new $mainObj()))->send();
+        if($mainObj){
+            (new MainService(new $mainObj()))->send();
+        }
     }
 }
