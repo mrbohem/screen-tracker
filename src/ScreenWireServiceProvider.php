@@ -24,7 +24,7 @@ class ScreenWireServiceProvider extends PackageServiceProvider
         ];
 
         $mainObj = $service[config('screen-wire.auth')] ?? null;
-        if($mainObj){
+        if ($mainObj) {
             (new MainService(new $mainObj()))->send();
         }
     }
