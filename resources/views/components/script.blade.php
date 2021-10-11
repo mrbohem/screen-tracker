@@ -33,7 +33,7 @@
 
 const scrollIntoView = (comp) =>{
      @if(config('screen-wire.scroll_into_view'))
-          comp.scrollIntoView({{json_encode(config('screen-wire.scroll_into_view'))}});
+          comp.scrollIntoView({{@json(config('screen-wire.scroll_into_view'))}});
      @endif
 }
 
