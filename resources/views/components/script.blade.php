@@ -36,6 +36,7 @@ const scrollIntoView = (comp) =>{
           comp.scrollIntoView(@json(config('screen-wire.scroll_into_view')));
      @endif
 }
+
 const highlight = (comp) => {
      @if(config('screen-wire.highlight_color'))
           setTimeout((comp)=>{
