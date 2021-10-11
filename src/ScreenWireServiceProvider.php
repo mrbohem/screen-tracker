@@ -18,11 +18,12 @@ class ScreenWireServiceProvider extends PackageServiceProvider
             ->hasRoute('screen-wire')
             ->hasViews();
 
-        $mainObj = [
+        $service = [
             false => \Mrbohem\ScreenWire\Service\PublicService::class,
             true => \Mrbohem\ScreenWire\Service\AuthService::class,
-        ][config('screen-wire.auth')];
+        ];
 
+        $mainObj = $service[config('screen-wire.auth')] ?? null;
         if($mainObj){
             (new MainService(new $mainObj()))->send();
         }
