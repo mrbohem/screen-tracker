@@ -39,9 +39,9 @@ const scrollIntoView = (comp) =>{
 
 const highlight = (comp) => {
      @if(config('screen-wire.highlight_color'))
-          setTimeout((comp)=>{
+          setTimeout(()=>{
                comp.style.backgroundColor = "{{config('screen-wire.highlight_color') ?? '#fff2ac' }}";
-          },1);
+          },1,comp);
      @endif
 };
 Echo.channel('screen_wire').listen('ScreenWireEvent', (e) => {
