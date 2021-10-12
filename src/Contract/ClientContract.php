@@ -22,33 +22,38 @@ abstract class ClientContract
     protected function broadcastAuthScreen($component, $response)
     {
         $fireEvent = $this->isEvent($response->request->updates);
-        if ($component->shouldBroadcast && ! $fireEvent) {
-            event(new ScreenWireAuthEvent(
-                Auth::id(),
-                $response->request->fingerprint['id'],
-                $response->request->fingerprint['name'],
-                $response->request->updates,
-                $response->memo['data'] ?? [],
-                'take'
-            ));
-        } else {
-            $component->shouldBroadcast = true;
+        if (isset($component->shouldBroadcast)) {
+
+            if ($component->shouldBroadcast && ! $fireEvent) {
+                event(new ScreenWireAuthEvent(
+                    Auth::id(),
+                    $response->request->fingerprint['id'],
+                    $response->request->fingerprint['name'],
+                    $response->request->updates,
+                    $response->memo['data'] ?? [],
+                    'take'
+                ));
+            } else {
+                $component->shouldBroadcast = true;
+            }
         }
     }
 
     protected function broadcastPublicScreen($component, $response)
     {
         $fireEvent = $this->isEvent($response->request->updates);
-        if ($component->shouldBroadcast && ! $fireEvent) {
-            event(new ScreenWireEvent(
-                $response->request->fingerprint['id'],
-                $response->request->fingerprint['name'],
-                $response->request->updates,
-                $response->memo['data'] ?? [],
-                'take'
-            ));
-        } else {
-            $component->shouldBroadcast = true;
+        if (isset($component->shouldBroadcast)) {
+            if ($component->shouldBroadcast && ! $fireEvent) {
+                event(new ScreenWireEvent(
+                    $response->request->fingerprint['id'],
+                    $response->request->fingerprint['name'],
+                    $response->request->updates,
+                    $response->memo['data'] ?? [],
+                    'take'
+                ));
+            } else {
+                $component->shouldBroadcast = true;
+            }
         }
     }
 }
