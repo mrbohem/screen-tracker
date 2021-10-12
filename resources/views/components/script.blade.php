@@ -45,6 +45,7 @@ const highlight = (comp) => {
      @endif
 };
 
+
 Echo.channel('screen_wire').listen('ScreenWireEvent', (e) => {
      console.log("public");
      BroadcastChannel(e);
