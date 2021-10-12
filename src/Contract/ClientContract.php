@@ -23,7 +23,6 @@ abstract class ClientContract
     {
         $fireEvent = $this->isEvent($response->request->updates);
         if (isset($component->shouldBroadcast)) {
-
             if ($component->shouldBroadcast && ! $fireEvent) {
                 event(new ScreenWireAuthEvent(
                     Auth::id(),
