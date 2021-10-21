@@ -2,7 +2,6 @@
 
 namespace Mrbohem\ScreenWire;
 
-use Mrbohem\ScreenWire\Service\MainService;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -19,8 +18,8 @@ class ScreenWireServiceProvider extends PackageServiceProvider
             ->hasViews();
     }
 
-    public function packageBooted():void
-    { 
+    public function packageBooted(): void
+    {
         app('ScreenTracker')->send();
     }
 
@@ -30,12 +29,12 @@ class ScreenWireServiceProvider extends PackageServiceProvider
             false => \Mrbohem\ScreenWire\Service\PublicService::class,
             true => \Mrbohem\ScreenWire\Service\AuthService::class,
         ];
-        
+
 
         $mainClass = $service[config('screen-wire.auth')] ?? \Mrbohem\ScreenWire\Service\AuthService::class;
 
-        if($mainClass){
-            $this->app->singleton('ScreenTracker',$mainClass);
+        if ($mainClass) {
+            $this->app->singleton('ScreenTracker', $mainClass);
         }
     }
 }
