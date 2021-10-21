@@ -17,15 +17,25 @@ class ScreenWireServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasRoute('screen-wire')
             ->hasViews();
+    }
 
+    public function packageBooted():void
+    { 
+        app('ScreenTracker')->send();
+    }
+
+    public function registeringPackage(): void
+    {
         $service = [
             false => \Mrbohem\ScreenWire\Service\PublicService::class,
             true => \Mrbohem\ScreenWire\Service\AuthService::class,
         ];
+        
 
-        $mainObj = $service[config('screen-wire.auth')] ?? null;
-        if ($mainObj) {
-            (new MainService(new $mainObj()))->send();
+        $mainClass = $service[config('screen-wire.auth')] ?? \Mrbohem\ScreenWire\Service\AuthService::class;
+
+        if($mainClass){
+            $this->app->singleton('ScreenTracker',$mainClass);
         }
     }
 }
