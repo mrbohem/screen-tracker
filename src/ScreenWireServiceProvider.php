@@ -31,7 +31,7 @@ class ScreenWireServiceProvider extends PackageServiceProvider
         ];
 
         $mainClass = $service[config('screen-wire.auth')] ?? \Mrbohem\ScreenWire\Service\AuthService::class;
-        
+
         if ($mainClass) {
             $this->app->singleton('ScreenTracker', $mainClass);
         }
