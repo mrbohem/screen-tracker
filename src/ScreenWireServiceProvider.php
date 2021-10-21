@@ -30,7 +30,6 @@ class ScreenWireServiceProvider extends PackageServiceProvider
             false => \Mrbohem\ScreenWire\Service\PublicService::class,
             true => \Mrbohem\ScreenWire\Service\AuthService::class,
         ];
-        
 
         $mainClass = $service[config('screen-wire.auth')] ?? \Mrbohem\ScreenWire\Service\AuthService::class;
 
