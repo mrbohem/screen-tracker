@@ -15,6 +15,7 @@ abstract class ClientContract
         if ($updates) {
             return ($updates[0]['type'] == "fireEvent") ? true : false;
         }
+
         return false;
     }
 
