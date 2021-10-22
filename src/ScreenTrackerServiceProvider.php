@@ -12,9 +12,9 @@ class ScreenTrackerServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('screen-wire')
+            ->name('screen-tracker')
             ->hasConfigFile()
-            ->hasRoute('screen-wire')
+            ->hasRoute('screen-tracker')
             ->hasViews();
     }
 
