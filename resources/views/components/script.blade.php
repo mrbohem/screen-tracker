@@ -45,12 +45,10 @@ const highlight = (comp) => {
      @endif
 };
 Echo.channel('screen_wire').listen('ScreenWireEvent', (e) => {
-     console.log("public");
      BroadcastChannel(e);
 });
 
-Echo.private('screen_wire_auth_{{Auth::id()}}').listen('ScreenWireAuthEvent',(e)=>{
-     console.log("private");
+Echo.private('screen_wire_auth_{{\Hashids::encode(Auth::id())}}').listen('ScreenWireAuthEvent',(e)=>{
      BroadcastChannel(e);
 });
      

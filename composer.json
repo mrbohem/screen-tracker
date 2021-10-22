@@ -19,7 +19,8 @@
         "php": "^8.0",
         "illuminate/contracts": "^8.37",
         "livewire/livewire": "^2.6",
-        "spatie/laravel-package-tools": "^1.4.3"
+        "spatie/laravel-package-tools": "^1.4.3",
+        "vinkla/hashids": "^9.1"
     },
     "require-dev": {
         "nunomaduro/collision": "^5.3",
