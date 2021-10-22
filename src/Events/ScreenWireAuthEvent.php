@@ -7,6 +7,7 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Vinkla\Hashids\Facades\Hashids;
 
 class ScreenWireAuthEvent implements ShouldBroadcastNow
 {
@@ -41,6 +42,6 @@ class ScreenWireAuthEvent implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('screen_wire_auth_'.$this->userId);
+        return new PrivateChannel('screen_wire_auth_'. Hashids::encode($this->userId));
     }
 }
