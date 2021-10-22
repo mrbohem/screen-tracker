@@ -1,10 +1,10 @@
 <?php
 
-namespace Mrbohem\ScreenWire\Contract;
+namespace Mrbohem\ScreenTracker\Contract;
 
 use Illuminate\Support\Facades\Auth;
-use Mrbohem\ScreenWire\Events\ScreenWireAuthEvent;
-use Mrbohem\ScreenWire\Events\ScreenWireEvent;
+use Mrbohem\ScreenTracker\Events\ScreenTrackerAuthEvent;
+use Mrbohem\ScreenTracker\Events\ScreenTrackerEvent;
 
 abstract class ClientContract
 {
@@ -24,7 +24,7 @@ abstract class ClientContract
         $fireEvent = $this->isEvent($response->request->updates);
         if (isset($component->shouldBroadcast)) {
             if ($component->shouldBroadcast && ! $fireEvent) {
-                event(new ScreenWireAuthEvent(
+                event(new ScreenTrackerAuthEvent(
                     Auth::id(),
                     $response->request->fingerprint['id'],
                     $response->request->fingerprint['name'],
@@ -43,7 +43,7 @@ abstract class ClientContract
         $fireEvent = $this->isEvent($response->request->updates);
         if (isset($component->shouldBroadcast)) {
             if ($component->shouldBroadcast && ! $fireEvent) {
-                event(new ScreenWireEvent(
+                event(new ScreenTrackerEvent(
                     $response->request->fingerprint['id'],
                     $response->request->fingerprint['name'],
                     $response->request->updates,

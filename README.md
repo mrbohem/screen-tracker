@@ -1,21 +1,21 @@
-# screen-wire
+# screen-tracker
 This is a Laravel Livewire package. It allow you to see what users are doing on their screen.
 
 # Installation
-     composer require mrbohem/screen-wire
+     composer require mrbohem/screen-tracker
 
 
 Add Blade directives before the end body tag in your template.
 
-    <x-screen-wire::script />
+    <x-screen-tracker::script />
 
 Publish Config File
     
-    php artisan vendor:publish --force --tag=screen-wire-config
+    php artisan vendor:publish --force --tag=screen-tracker-config
 
 Publish Frontend Assets
     
-    php artisan vendor:publish --force --tag=screen-wire-views
+    php artisan vendor:publish --force --tag=screen-tracker-views
 
 To keep the assets up-to-date and avoid issues in future updates, we highly recommend adding the command to the post-autoload-dump scripts in your composer.json file:
 
@@ -26,8 +26,8 @@ To keep the assets up-to-date and avoid issues in future updates, we highly reco
                 "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
                 "@php artisan package:discover --ansi",
                 "@php artisan vendor:publish --force --tag=livewire:assets --ansi",
-                "@php artisan vendor:publish --force --tag=screen-wire-config --ansi",
-                "@php artisan vendor:publish --force --tag=screen-wire-views --ansi"
+                "@php artisan vendor:publish --force --tag=screen-tracker-config --ansi",
+                "@php artisan vendor:publish --force --tag=screen-tracker-views --ansi"
             ]
         }
     }
@@ -35,7 +35,7 @@ To keep the assets up-to-date and avoid issues in future updates, we highly reco
 # Usage
 Call Trait in which component you want to monitor.
     
-    use Mrbohem\ScreenWire\Traits\ScreenWireable;
+    use Mrbohem\ScreenTracker\Traits\ScreenTrackerable;
     ...
-    use ScreenWireable;
+    use ScreenTrackerable;
     

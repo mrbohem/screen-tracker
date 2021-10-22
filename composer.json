@@ -1,12 +1,12 @@
 {
-    "name": "mrbohem/screen-wire",
+    "name": "mrbohem/screen-tracker",
     "description": "Laravel Livewire package for clone screen with the help of websocket",
     "keywords": [
         "mrbohem",
         "laravel",
-        "screen-wire"
+        "screen-tracker"
     ],
-    "homepage": "https://github.com/mrbohem/screen-wire",
+    "homepage": "https://github.com/mrbohem/screen-tracker",
     "license": "MIT",
     "authors": [
         {
@@ -32,13 +32,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Mrbohem\\ScreenWire\\": "src",
-            "Mrbohem\\ScreenWire\\Database\\Factories\\": "database/factories"
+            "Mrbohem\\ScreenTracker\\": "src",
+            "Mrbohem\\ScreenTracker\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mrbohem\\ScreenWire\\Tests\\": "tests"
+            "Mrbohem\\ScreenTracker\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,10 +51,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mrbohem\\ScreenWire\\ScreenWireServiceProvider"
+                "Mrbohem\\ScreenTracker\\ScreenTrackerServiceProvider"
             ],
             "aliases": {
-                "ScreenWire": "Mrbohem\\ScreenWire\\ScreenWireFacade"
+                "ScreenTracker": "Mrbohem\\ScreenTracker\\ScreenTrackerFacade"
             }
         }
     },

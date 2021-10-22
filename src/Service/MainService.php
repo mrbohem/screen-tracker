@@ -1,8 +1,8 @@
 <?php
 
-namespace Mrbohem\ScreenWire\Service;
+namespace Mrbohem\ScreenTracker\Service;
 
-use Mrbohem\ScreenWire\Contract\ClientContract;
+use Mrbohem\ScreenTracker\Contract\ClientContract;
 
 class MainService
 {

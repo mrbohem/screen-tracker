@@ -32,25 +32,25 @@
 }
 
 const scrollIntoView = (comp) =>{
-     @if(config('screen-wire.scroll_into_view'))
-          comp.scrollIntoView(@json(config('screen-wire.scroll_into_view')));
+     @if(config('screen-tracker.scroll_into_view'))
+          comp.scrollIntoView(@json(config('screen-tracker.scroll_into_view')));
      @endif
 }
 
 const highlight = (comp) => {
-     @if(config('screen-wire.highlight_color'))
+     @if(config('screen-tracker.highlight_color'))
           setTimeout(()=>{
-               comp.style.backgroundColor = "{{config('screen-wire.highlight_color') ?? '#fff2ac' }}";
+               comp.style.backgroundColor = "{{config('screen-tracker.highlight_color') ?? '#fff2ac' }}";
           },1,comp);
      @endif
 };
-Echo.channel('screen_wire').listen('ScreenWireEvent', (e) => {
+Echo.channel('screen_tracker').listen('ScreenTrackerEvent', (e) => {
      BroadcastChannel(e);
 });
 
-Echo.private('screen_wire_auth_{{\Hashids::encode(Auth::id())}}').listen('ScreenWireAuthEvent',(e)=>{
+Echo.private('screen_tracker_auth_{{\Hashids::encode(Auth::id())}}').listen('ScreenTrackerAuthEvent',(e)=>{
      BroadcastChannel(e);
 });
      
-//php artisan vendor:publish --force --tag=screen-wire-views --ansi
+//php artisan vendor:publish --force --tag=screen-tracker-views --ansi
 </script>

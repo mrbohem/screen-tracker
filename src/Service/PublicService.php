@@ -1,9 +1,9 @@
 <?php
 
-namespace Mrbohem\ScreenWire\Service;
+namespace Mrbohem\ScreenTracker\Service;
 
 use Livewire\Livewire;
-use Mrbohem\ScreenWire\Contract\ClientContract;
+use Mrbohem\ScreenTracker\Contract\ClientContract;
 
 class PublicService extends ClientContract
 {
