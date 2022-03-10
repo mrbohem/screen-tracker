@@ -1,6 +1,8 @@
 # screen-tracker
 This is a Laravel Livewire package. It allow you to see what users are doing on their screen.
 
+![Screen Tracker](https://github.com/mrbohem/screen-tracker/blob/main/screenTracker.gif)
+
 # Installation
      composer require mrbohem/screen-tracker
 
